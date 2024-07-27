@@ -1,0 +1,357 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f0f4f8;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+header {
+    background: linear-gradient(90deg, #0b235f, #3e79ff);
+    color: #f0f4f8;
+    padding: 1rem 0;
+    text-align: center;
+    /* position: relative; */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* position: sticky; */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav a {
+    color: #f0f4f8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+header nav a:hover {
+    color: #ff9f1c;
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #ff9f1c;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+header nav ul li:hover::after {
+    transform: scaleX(1);
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff9f1c;
+}
+
+section {
+    padding: 4rem 0;
+    position: relative;
+}
+
+section h2 {
+    border-bottom: 2px solid #ff9f1c;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    overflow: hidden;
+}
+
+.product img {
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
+    border-radius: 50%;
+    border: 2px solid #0b235f;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background: linear-gradient(90deg, #0b235f, #3e79ff);
+    color: #f0f4f8;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+footer a {
+    color: #f0f4f8;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff9f1c;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+form {
+    margin-top: 1rem;
+}
+
+form input {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border: 1px solid #ff9f1c;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 0.5rem 1rem;
+    background-color: #ff9f1c;
+    color: #f0f4f8;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #e63946;
+}
+
+.parallax {
+    background: url("hero1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+    opacity: 0.7;
+}
+
+.parallax-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f0f4f8;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.68);
+    padding: 24px;
+}
+
+.parallax h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.parallax p {
+    font-size: 1.2rem;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.product:nth-child(odd) {
+    animation: slideInLeft 1s forwards;
+}
+
+.product:nth-child(even) {
+    animation: slideInRight 1s forwards;
+}
+
+.testimonials,
+.vision-mission,
+.happy-clients {
+    background: #fff;
+    padding: 4rem 0;
+    margin: 2rem 0;
+}
+
+.testimonials h2,
+.vision-mission h2,
+.happy-clients h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.testimonial {
+    background: #0b235f;
+    color: #f0f4f8;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.testimonial p {
+    margin: 1rem 0;
+}
+
+.vision-mission {
+    text-align: center;
+}
+
+.vision-mission p {
+    margin: 1rem 0;
+}
+
+.happy-clients {
+    text-align: center;
+}
+
+.happy-clients img {
+    width: 100px;
+    margin: 1rem;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Interactive elements */
+.btn {
+    padding: 0.5rem 1rem;
+    background-color: #ff9f1c;
+    color: #f0f4f8;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e63946;
+}
+
+.icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+/* Additional sections */
+.cta-section {
+    background: #0b235f;
+    color: #f0f4f8;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    margin-bottom: 2rem;
+}
+
+.cta-section .btn {
+    background-color: #ff9f1c;
+    color: #0b235f;
+}
+
+.cta-section .btn:hover {
+    background-color: #e63946;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url('https://source.unsplash.com/random/1920x1080?technology') no-repeat center center;
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+}
